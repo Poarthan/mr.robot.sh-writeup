@@ -31,7 +31,7 @@ rm -rf /usr/bin/rbash /usr/share/doc/bash/RBASH /var/lib/flatpak/runtime/org.fed
 ### T1195 Fixing DNF repository: Removed fedorarepo yum repository
 So if you try to install anything you will find that it doesn't work. So to fix this you go to /etc/yum.repos.d/ and delete all the unnecessary/unusual files, you can figure this out by comparing it to a normal /etc/yum.repos.d and looking for differences. Here are the suspicious ones:
 
-![suspicious repos](sus-repos.jpg)
+![suspicious repos](/images/sus-repos.jpg)
 
 You can just remove these files with `rm -rf`
 
@@ -64,7 +64,7 @@ ANSWER: chromium.x86_64
 ```
 For this one I ran `sudo dnf list installed | less` and looked through the installed packages for anything that was a web browser, and so this chromium package was found.
 
-![dnf list installed](dnf-installed.jpg)
+![dnf list installed](/images/dnf-installed.jpg)
 
 ### Removed Chromium browser
 So obviously from reading the readme, this package is unnecessary, therefore, you should uninstall the chromium browser with `sudo dnf remove chromium`.
@@ -134,7 +134,7 @@ access software that Fred is using?
 ANSWER: gnome-remote-desktop
 ```
 This one took a lot of looking around, eventually, I found that inside the gnome desktop settings, in the sharing section, there was a suspicious remote desktop and after doing some research, I found that this was Gnome's Remote desktop.
-![Found Remote Desktop](remote-desktop-sus.jpg)
+![Found Remote Desktop](/images/remote-desktop-sus.jpg)
 
 For some reason I didn't find it with dnf but if you run `sudo dnf list installed | less` and search for remote with `/remote` and navigate around with `n` then you will find gnome-remote-desktop.
 
@@ -186,7 +186,7 @@ ANSWER: webhook.site
 ```
 Since we know this is in PAM, you can just go through the pam files with something like `cat * | less` and find the unusual entry. Or you can just compare against defaults.
 
-![external host for pam](pam-sus.jpg)
+![external host for pam](/images/pam-sus.jpg)
 
 ### T1136.002 Removed malicious pam module
 You can just remove the malicious lines from teh file
