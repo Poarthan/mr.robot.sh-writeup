@@ -241,6 +241,8 @@ ANSWER: e28d74a368f1f701ea329e7cfc3785c3
 ```
 This one was hard, the way that ended up working was to go to /lib/modules/something and modinfoing the first .ko file which was systemd.ko, so `modinfo systemd.ko` and recognizing it was a rootkit. Then you can remove this rootkit with `rmmod systemd`.
 
+A better way someone had of finding it was looking at the was going to the /etc/modules-loaded.d/ file which lists all additional kernel modules loaded at boot and you will instantly konw that systemd was the suspect one. Removing this file will also remove persistence of the rootkit if one reboots the image. 
+
 ---
 
 Full Scoring:
