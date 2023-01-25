@@ -243,7 +243,7 @@ This one was hard, the way that ended up working was to go to /lib/modules/somet
 
 A better way someone had of finding it was looking through /etc/modules-loaded.d/ directory which lists all additional kernel modules loaded at boot and you will instantly konw that systemd was the suspect one. Removing this file will also remove persistence of the rootkit if one reboots the image. 
 
-The rootkit was created with [https://github.com/xcellerator/linux_kernel_hacking/tree/master/3_RootkitTechniques/3.4_hiding_directories](https://github.com/xcellerator/linux_kernel_hacking/tree/master/3_RootkitTechniques/3.4_hiding_directories), if anyone wants to do more research into rootkits for the post of studying they can check out Xcellerator's blog: [https://xcellerator.github.io/posts/linux_rootkits_01/](https://xcellerator.github.io/posts/linux_rootkits_01/).
+The rootkit was created with [https://github.com/xcellerator/linux_kernel_hacking/tree/master/3_RootkitTechniques/3.4_hiding_directories](https://github.com/xcellerator/linux_kernel_hacking/tree/master/3_RootkitTechniques/3.4_hiding_directories), if anyone wants to do more research into rootkits, they can check out Xcellerator's blog: [https://xcellerator.github.io/posts/linux_rootkits_01/](https://xcellerator.github.io/posts/linux_rootkits_01/).
 
 ---
 
